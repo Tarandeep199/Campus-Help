@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/styles/style.css">
+    </head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        for(var i = 0;i<'{{numBoxes}}';i++){
+            var result = "";
+            if(i==0){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[0]}}</h2><p>{{issues[0]}}</p><form method='post'><button class=responseButton type=submit value=button0 name=button0>Accept</button></div>";
+            }
+            if(i==1){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[1]}}</h2><p>{{issues[1]}}</p><form method='post'><button class=responseButton type=submit value=button1 name=button1>Accept</button></div>";
+            }
+            if(i==2){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[2]}}</h2><p>{{issues[2]}}</p><form method='post'><button class=responseButton type=submit value=button2 name=button2>Accept</button></div></div>";
+            }
+            if(i==3){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[3]}}</h2><p>{{issues[3]}}</p<form method='post'><button class=responseButton type=submit value=button3 name=button3>Accept</button></div>></div>";
+            }
+            if(i==4){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[4]}}</h2><p>{{issues[4]}}</p><form method='post'><button class=responseButton type=submit value=button4 name=button4>Accept</button></div></div>";
+            }
+            if(i==5){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[5]}}</h2><p>{{issues[5]}}</p><form method='post'><button class=responseButton type=submit value=button5 name=button5>Accept</button></div></div>";
+            }
+            if(i==6){
+                result  = "<div class=ticket><div class=tempBox></div><h2>{{issues[6]}}</h2><p>{{issues[6]}}</p><form method='post'><button class=responseButton type=submit value=button6 name=button6>Accept</button></div></div>";
+            }
+            $(".container").append(result);
+        }
+        $("button").click(function(){
+            var container = $(".container");
+            container.animate({
+                height: 'toggle',
+                width:'toggle'
+            }, "slow");
+
+            var box = $(".box");
+            if(box.height != 0)
+            {
+                box.animate({
+                    height: '400px',
+                    width: '600px'
+                }, "slow");
+            }
+            else
+            {
+                box.animate({
+                    height: '0px',
+                    width: '0px'
+                }, "slow");
+            }
+            
+        });
+        $( ".plusCircle" ).click(function() {
+            if (  $( this ).css( "transform" ) == 'none' ){
+                $(this).css("transform","rotate(45deg)");
+            } 
+            else {
+                $(this).css("transform","" );
+            }
+        });
+    });
+
+    function confirmAccept(){
+        var result = confirm("Please confirm you want to accept this task");
+        return result;
+    }
+    </script>
+
+    <title>Help Me!</title>
+
+    <body>
+
+        <h1>
+            <center>Help Me!</center>
+        </h1>
+
+        <a><button onclick="window.location.href='/ticket_create'" class="plusCircle" text-align="right"></button> </a>
+
+        <div class="box" style="height: toggle"></div>
+
+        <div class="container">
+            
+        </div>
+
+    </body>
+</html>

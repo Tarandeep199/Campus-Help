@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>TICKET INPUT PAGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script language="JavaScript">
+        function myFunction() {
+            var btn = document.createElement("DIV");
+            btn.innerHTML = document.getElementById("user_input").value;
+            document.body.appendChild(btn);
+        }
+      </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ENTER TICKET HERE</h1>
+      <br>
+      <form action="" method="post">
+        <label><b>Enter a Message</b></label>
+        <input type="text" name="ticket_content" id="user_input" value>
+        <input class="btn btn-default" type="submit" value="submit" onclick="myFunction()">
+      </form>
+    </div>
+
+
+  </body>
+</html>

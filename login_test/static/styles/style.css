@@ -1,0 +1,155 @@
+/* Plus sign button for creating a new ticket */
+@keyframes ticketFade {
+    
+}
+
+.box {
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    margin-left: 26.5%;
+    background-color: black;
+    transition: 0.5s;
+    overflow: hidden;
+    border-radius: 15px;
+    animation: 1s;
+}
+.plusCircle {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-left: 92.5%;
+    background-color: rgb(0, 255, 0);
+    position: relative;
+    transition: 0.5s;
+}
+.plusCircle::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 6.5%;
+    width: 50px;
+    margin-left: 8px;
+    background-color: #555;
+    top: 47.5%;
+    left: 5%;
+    right: 5%;
+}
+.plusCircle::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 50px;
+    width: 6.5%;
+    margin-top: 8px;
+    background-color: #555;
+    left: 48%;
+    top: 5%;
+    bottom: 5%;
+}
+.plusCircle:focus {
+    outline: none;
+}
+.plusCircle:hover {
+    background-color: rgb(2, 177, 2);
+}
+
+.xCircle {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-left: 92.5%;
+    background-color: rgb(0, 255, 0);
+    position: relative;
+    transition: 0.5s;
+    transform: rotate(45deg);
+}
+.xCircle::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 6.5%;
+    width: 50px;
+    margin-left: 8px;
+    background-color: #555;
+    top: 47.5%;
+    left: 5%;
+    right: 5%;
+}
+.xCircle::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 50px;
+    width: 6.5%;
+    margin-top: 8px;
+    background-color: #555;
+    left: 48%;
+    top: 5%;
+    bottom: 5%;
+}
+.xCircle:focus {
+    outline: none;
+}
+.xCircle:hover {
+    background-color: rgb(2, 177, 2);
+}
+
+/* Tickets (and container for holding them) */
+.container {
+    position: relative;
+    width: 97%;
+    height: 600px;
+    margin-left: 1.5%;
+    background-color: white;
+}
+.container .ticket {
+    position: relative;
+    font-family: sans-serif;
+    padding: 10px;
+    width: calc(33% - 2.15%);
+    height: calc(45% - 3%);
+    background-color: turquoise;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: 1.5s;
+    color: white;
+}
+.container .ticket .tempBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: darkblue;
+    transition: 0.5s;
+}
+.container .ticket:hover .tempBox{
+    width: 100%;
+    height: 15px;
+    bottom: calc(50% - 50px);
+}
+.container .ticket .content {
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    border: 0;
+    margin: 0;
+    color: #fff
+}
+.container .ticket .content h2 {
+    text-align: center;
+    border: 0;
+    margin: 0;
+    color: white
+}
+.container .ticket .content p {
+    text-align: center;
+    border: 0;
+    margin: 0;
+    color: white
+}
+
